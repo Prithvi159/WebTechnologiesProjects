@@ -1,0 +1,293 @@
+<head>
+    <title>Application Status</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+
+
+.modal-content {
+    background-color: #42469d;
+    border-color: #42469d;
+    border-radius: 1rem
+}
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 750px;
+        margin: 1.75rem auto
+    }
+}
+
+
+
+
+.show {
+    padding: 0
+}
+
+.modal-header {
+    border-bottom: none;
+    text-align: center
+}
+
+.modal-header .close {
+    padding: 1rem 1rem;
+    margin: -1rem -1rem -1rem 0;
+    color: #fff
+}
+
+:-moz-any-link:focus {
+    outline: none
+}
+
+.modal-title {
+    line-height: 3rem
+}
+
+.modal-body {
+    padding: 1rem
+}
+
+#progressbar {
+    margin-bottom: 3vh;
+    overflow: hidden;
+    color: white;
+    padding-left: 0px;
+    margin-top: 3vh
+}
+
+#progressbar li {
+    list-style-type: none;
+    font-size: 0.8rem;
+    width: 25%;
+    float: left;
+    position: relative;
+    font-weight: 400;
+    color: white
+}
+
+#progressbar #step1:before {
+    content: "";
+    color: white;
+    width: 20px;
+    height: 20px;
+    margin-left: 0px !important
+}
+
+#progressbar #step2:before {
+    content: "";
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    margin-left: 32%
+}
+
+#progressbar #step3:before {
+    content: "";
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    margin-right: 32%
+}
+
+#progressbar #step4:before {
+    content: "";
+    color: rgb(151, 149, 149, 0.651);
+    width: 20px;
+    height: 20px;
+    margin-right: 0px !important
+}
+
+#progressbar li:before {
+    line-height: 29px;
+    display: block;
+    font-size: 12px;
+    background: rgb(151, 149, 149);
+    border-radius: 50%;
+    margin: auto;
+    z-index: -1;
+    margin-bottom: 1vh
+}
+
+#progressbar li:after {
+    content: '';
+    height: 3px;
+    background: rgb(151, 149, 149, 0.651);
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    margin-bottom: 2vh;
+    top: 8px;
+    z-index: 1
+}
+
+.progress-track {
+    padding: 0 8%
+}
+
+#progressbar li:nth-child(2):after {
+    margin-right: auto
+}
+
+#progressbar li:nth-child(1):after {
+    margin: auto
+}
+
+#progressbar li:nth-child(3):after {
+    float: left;
+    width: 68%
+}
+
+#progressbar li:nth-child(4):after {
+    margin-left: auto;
+    width: 132%
+}
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+    background: white
+}
+
+
+
+
+
+
+
+
+
+
+
+button:active {
+    outline: none
+}
+
+button:focus {
+    outline: none
+}
+
+button {
+    margin-top: 10vh
+}
+
+
+      /* Remove the navbar's default margin-bottom and rounded borders */ 
+      .navbar {
+        margin-bottom: 0;
+        border-radius: 0;
+      }
+      
+    #example{
+        background-image: url(bgform.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+      /* On small screens, set height to 'auto' for sidenav and grid */
+      @media screen and (max-width: 767px) {
+        .sidenav {
+          height: auto;
+          padding: 15px;
+        }
+        .row.content {height:auto;} 
+      }
+      body{background-color:#ffffff}
+
+      p{font-size:20; color:white}
+
+      #alertBox {
+    position:relative;
+    width:300px;
+    min-height:100px;
+    margin-top:50px;
+    border:1px solid #666;
+    background-color:#fff;
+    background-repeat:no-repeat;
+    background-position:20px 30px;
+}
+    </style>
+  </head>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <img src="C:\Users\Training\Desktop\logo.jpg" width=50px height=50px>
+      </div>
+  
+   
+     
+         
+        </ul>
+      </div>
+    
+    </div>
+  </nav>
+
+
+  <CENTER>
+      <BR><BR>
+<div id="example">
+     <form action="" id="EmploymentApplication100" method="post" onsubmit="return ValidateForm(this);">
+    
+
+    <table border="0" cellpadding="5" cellspacing="0">
+    <tr> <td style="width: 50%">
+    <label for="First_Name"><b>First name *</b></label><br />
+    <input name="First_Name" type="text" maxlength="50" style="width:100%;max-width: 260px" />
+    </td> </tr> <tr> <td colspan="2"><br>
+    <label for="Last_Name"><b>Last name *</b></label><br />
+    <input name="Last_Name" type="text" maxlength="50" style="width:100%;max-width: 260px" />
+    </td> </tr> <tr> <td colspan="2">
+        <BR>
+    <label for="Email_Address"><b>Email *</b></label><br />
+    <input name="Email_Address" type="text" maxlength="100" style="width:100%;max-width: 535px" />
+    </td> </tr> <tr> <td colspan="2">
+    
+        <button type="button" class="btn btn-primary d-flex mx-auto btn-lg" data-toggle="modal" data-target="#myModal"> Track your Application </button>
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title mx-auto">Application Status<br></h4> <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div> <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="progress-track">
+                            <ul id="progressbar">
+                                <li class="step0 active " id="step1">Application submitted</li>
+                                <li class="step0 active text-center" id="step2">Reviewing Application </li>
+                                <li class="step0 active text-right" id="step3"><span id="three">Application accepted</span></li>
+                                <li class="step0 text-right" id="step4">Selected for interview</li>
+                            </ul>
+                        </div>
+                      
+                            <div class="col-3">
+                                <div class="d-table-row"> <a href=#><i class="fa fa-phone" aria-hidden="true"></i></a> </div>
+                                <div class="d-table-row"> <a href=#><i class="fa fa-envelope" aria-hidden="true"></i></a> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+
+        
+    
+   
+
+    </table>
+       
+ 
+    </form>
+</div> <!-- The Modal -->
+
+    </CENTER>
